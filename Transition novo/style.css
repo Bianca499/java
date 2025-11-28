@@ -1,0 +1,190 @@
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #f4f4f9;
+}
+
+h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* --- Estilos Comuns de Botão --- */
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 15px;
+    will-change: transform; 
+}
+
+/* ------------------------------------------------------------------ */
+/* EXERCÍCIO 1: BOTÃO COLORIDO (Transição de Cor) */
+/* ------------------------------------------------------------------ */
+.btn-colorido {
+    background-color: #dc3545;
+    color: #333;
+    border: none;
+    transition: background-color 0.5s ease;
+}
+
+.btn-colorido:hover {
+    background-color: #28a745; 
+}
+
+/* ------------------------------------------------------------------ */
+/* EXERCÍCIO 2: CRESCENDO (Transição de Transform) */
+/* ------------------------------------------------------------------ */
+.btn-crescendo {
+    background-color: #ffc107;
+    color: #343a40;
+    border: none;
+    transition: transform 0.4s ease-out;
+}
+
+.btn-crescendo:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------------------------------------------------------ */
+/* EXERCÍCIO 3: BOTÃO COM ATRASO (Transition-Delay) */
+/* ------------------------------------------------------------------ */
+.btn-atraso {
+    background-color: #dc3545;
+    color: white;
+    border: 2px solid #dc3545;
+    transition: 
+        background-color 0.3s ease, 
+        color 0.3s ease, 
+        border-color 0.3s ease;
+    transition-delay: 0.5s;
+}
+
+.btn-atraso:hover {
+    background-color: #6c757d;
+    color: #fff;
+    border-color: #6c757d;
+}
+
+/* ------------------------------------------------------------------ */
+/* EXERCÍCIO 4: CARTÃO DE DESTAQUE (Múltiplas Propriedades) */
+/* ------------------------------------------------------------------ */
+.card-destaque-container {
+     display: flex;
+}
+
+.card-destaque {
+    width: 250px;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    transition: 
+        background-color 0.3s ease, 
+        transform 0.3s ease, 
+        box-shadow 0.3s ease;
+}
+
+.card-destaque:hover {
+    background-color: #f8f9fa; 
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+/* ------------------------------------------------------------------ */
+/* EXERCÍCIO 5: TEXTO INTERATIVO (Font e Delay) */
+/* ------------------------------------------------------------------ */
+.texto-interativo {
+    color: #495057;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.texto-interativo:hover {
+    color: #0056b3;
+    font-size: 18px; 
+}
+
+.com-delay {
+    transition-delay: 0.2s;
+}
+
+/* ------------------------------------------------------------------ */
+/* EXERCÍCIO 6: IMAGEM COM ZOOM (Overflow e Scale) */
+/* ------------------------------------------------------------------ */
+.img-container {
+    width: 300px;
+    height: 200px;
+    overflow: hidden; 
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-zoom {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.img-container:hover .img-zoom {
+    transform: scale(1.2); 
+}
+
+/* ------------------------------------------------------------------ */
+/* EXERCÍCIO 7: MENU INTERATIVO (Underline com Transform) */
+/* ------------------------------------------------------------------ */
+.menu-interativo {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #343a40;
+    border-radius: 5px;
+}
+
+.menu-interativo li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    position: relative; 
+    transition: color 0.3s ease; 
+}
+
+.menu-interativo li a:hover {
+    color: #ffc107;
+}
+
+/* Cria o pseudo-elemento que será o underline */
+.menu-interativo li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ffc107;
+    transform: scaleX(0); 
+    transition: transform 0.3s ease-out;
+    transform-origin: left; 
+}
+
+/* O underline aparece ao passar o mouse */
+.menu-interativo li a:hover::after {
+    transform: scaleX(1); 
+}
